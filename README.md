@@ -1,4 +1,4 @@
-#Using email for auth instead of username
+# Using email for auth instead of username
 
 ## start new project:
 1. Create new directory
@@ -32,3 +32,15 @@
 6. create view and url for the app
 7. to override each default page of the allauth create new template for it and it will be changed
 
+## Convert the project to be API
+### Using Django Rest Framework:
+
+1. install djangorestframework:
+    `pipenv install djangorestframework`
+2. add `rest_framework` to the `INSTALLED_APPS` in settings.py
+3. create `serializers.py` file inside the app (auth_api)
+4. using Django RESTful Framework generic views instead of custom views and template because it is just API and they are pre-built views
+5. update `auth_api/views.py` to include generic views and create list_view and details_view
+6. the project's url point to the auth_api path
+7. update the app url 
+8. the API supports CRUD
